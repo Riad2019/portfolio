@@ -25,7 +25,7 @@ export default function ExperienceCard({}: Props) {
         viewport={{ once: true }}
         src="https://i.postimg.cc/bwrQkKrn/logo-alt-cube-100x100.png"
         className="rounded-full w-32 h-32 object-cover object-center
-                xl:h[200px] xl:w-[200px]"
+                xl:h-40 xl:w-40"
       />
       <div className="px-0 md:px-10">
         <h4 className="text-4xl font-light">Intern of Binary Quest</h4>
