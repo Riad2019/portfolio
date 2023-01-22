@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { urlFor } from "../sanity";
+import { PageInfo } from "../typings";
+type Props = {
+  pageInfo: PageInfo[];
+};
 
-type Props = {};
-
-export default function About({}: Props) {
+export default function About({ pageInfo }: Props) {
+  const page = pageInfo[0];
   return (
     <motion.div
       initial={{
@@ -32,7 +36,7 @@ export default function About({}: Props) {
           opacity: 1,
           x: 0,
         }}
-        src="https://i.postimg.cc/3xB0r7ZT/279314299-2323122744505168-358736466133317700-n.jpg"
+        src={urlFor(page.profilePic).url()}
         className="-mb-20 md:mb-0 rounded-full md:rounded-lg flex-shrink-0 w-56 h-56 object-cover 
         md:h-95 md:w-64 xl:h[600px] xl:w-[500px]"
       />
@@ -42,13 +46,7 @@ export default function About({}: Props) {
           <span className="underline decoration-[#F7AB0A]/50">little</span>{" "}
           Background
         </h4>
-        <p className="text-base">
-          A highly motivated and energetic person who has a great passion for
-          working with technology. I would like to use my skills for
-          professional growth, which will help me contribute towards the
-          organizations objectives within the time frame. I am interested in Web
-          development and would like to learn more about it.
-        </p>
+        <p className="text-base">{page.backgroundInformation}</p>
       </div>
     </motion.div>
   );

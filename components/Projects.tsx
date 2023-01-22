@@ -1,10 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-type Props = {};
+import { Project } from "../typings";
+import { urlFor } from "../sanity";
+type Props = {
+  projects: Project[];
+};
 
-export default function Projects({}: Props) {
-  const projects = [1, 2, 3, 4, 5];
+export default function Projects({ projects }: Props) {
+  // const projects = [1, 2, 3, 4, 5];
   return (
     <motion.div
       initial={{
@@ -32,11 +36,11 @@ export default function Projects({}: Props) {
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
           >
             <motion.img
-              src="https://i.postimg.cc/DzDXKgrb/a704ae3242.png"
+              src={urlFor(project.image).url()}
               alt="Picture of the author"
               // className="relative h-102 w-32 max-auto object-cover"
-              // width={200}
-              // height={200}
+              width={200}
+              height={200}
               initial={{
                 y: -300,
                 opacity: 0,
@@ -53,21 +57,24 @@ export default function Projects({}: Props) {
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-4xl font-semibold text-center">
                 <span className=" decoration-[#F7AB0A]/50">
-                  Case Study {idx + 1} of {projects.length}: Burj Al Arab Hotel
+                  Case Study {idx + 1} of {projects.length}: {project.title}
                 </span>
                 System
               </h4>
+
+              <div className="flex items-center space-x-2 justify-center">
+                {project?.technologies.map((technology, idx) => (
+                  <Image
+                    key={idx}
+                    src={urlFor(technology.image).url()}
+                    height={50}
+                    width={50}
+                    alt="tech image"
+                  />
+                ))}
+              </div>
               <p className="text-lg text-center md:text-left">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industrys standard dummy text
-                ever since the 1500s, when an unknown printer took a galley of
-                type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
+                {project.summary}
               </p>
             </div>
           </div>
