@@ -8,7 +8,6 @@ const query = groq`
 *[_type == "experience"]{
     ...,
     technologies[]->
-
 }
 
 `;

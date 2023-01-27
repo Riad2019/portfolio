@@ -9,7 +9,8 @@ import Skills from "../components/Skills";
 import Contact from "../components/Contact";
 import Link from "next/link";
 import { PageInfo, Experience, Skill, Social, Project } from "../typings";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
+// import { GetStaticProps } from "next";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchExperience } from "../utils/fetchExperience";
 import { fetchSkill } from "../utils/fetchSkill";
@@ -81,7 +82,7 @@ export default function Home({
     </div>
   );
 }
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const pageInfo: PageInfo[] = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperience();
   const skills: Skill[] = await fetchSkill();
