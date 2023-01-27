@@ -11,14 +11,12 @@ type Props = {
 };
 
 export default function Hero({ pageInfo }: Props) {
-  //   const myLoader = ({ src, width, quality }) => {
-  //     return `https://example.com/${src}?w=${width}&q=${quality || 75}`;
-  //   };
+
   const page = pageInfo[0];
 
   const [text] = useTypewriter({
     words: [
-      `Hi, The Name's ${page.name}`,
+      `Hi, The Name's ${page?.name}`,
       "Guy-who-loves-Coffee.tsx",
       "<ButLovesToCodeMore/>",
     ],
@@ -32,7 +30,7 @@ export default function Hero({ pageInfo }: Props) {
       <BackgroundCircle />
 
       <Image
-        src={urlFor(page.heroImage).url()}
+        src={urlFor(page?.heroImage).url()}
         alt="Picture of the author"
         className="relative rounded-full h-32 w-32 max-auto object-cover"
         width={200}

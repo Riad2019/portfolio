@@ -4,10 +4,10 @@ import Image from "next/image";
 import { Experience } from "../typings";
 import { urlFor } from "../sanity";
 type Props = {
-  experiances: Experience;
+  experiences: Experience;
 };
 
-export default function ExperienceCard({ experiances }: Props) {
+export default function ExperienceCard({ experiences }: Props) {
   return (
     <article
       className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 h-[600px]
@@ -27,7 +27,7 @@ export default function ExperienceCard({ experiances }: Props) {
           y: 0,
         }}
         viewport={{ once: true }}
-        src={urlFor(experiances.companyImage).url()}
+        src={urlFor(experiences.companyImage).url()}
         className="rounded-full w-32 h-32 object-cover object-center
                 xl:h-40 xl:w-40"
       />
@@ -35,10 +35,10 @@ export default function ExperienceCard({ experiances }: Props) {
         <h4 className="text-4xl font-light">Intern of Binary Quest</h4>
         <p className="font-bold text-2xl mt-1">Binary Quest</p>
         <div className="flex space-x-2 my-2">
-          {experiances.technologies.map((technology, idx) => (
+          {experiences?.technologies?.map((technology, idx) => (
             <Image
               key={idx}
-              src={urlFor(technology.image).url()}
+              src={urlFor(technology?.image).url()}
               alt="Picture of the nextjs language"
               className="rounded-full h-10 w-10"
               width={200}
@@ -86,13 +86,13 @@ export default function ExperienceCard({ experiances }: Props) {
           {/* tech used */}
         </div>
         <p className="uppercase py-5 text-gray-300">
-          {new Date(experiances.dateStarted).toDateString()}-{""}
-          {experiances.isCurrentWorkingHere
+          {new Date(experiences?.dateStarted).toDateString()}-{""}
+          {experiences?.isCurrentWorkingHere
             ? "Present"
-            : new Date(experiances.dateEnded).toDateString()}
+            : new Date(experiences?.dateEnded).toDateString()}
         </p>
         <ul className="list-disc space-y-4 ml-5 text-lg max-h-96 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80]">
-          {experiances.points.map((point, idx) => (
+          {experiences?.points?.map((point, idx) => (
             <li key={idx}>{point}</li>
           ))}
         </ul>

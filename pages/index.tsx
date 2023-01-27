@@ -1,7 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import About from "../components/About";
@@ -14,13 +12,13 @@ import { PageInfo, Experience, Skill, Social, Project } from "../typings";
 import { GetStaticProps } from "next";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchExperience } from "../utils/fetchExperience";
-import { fetchSkills } from "../utils/fetchSkill";
+import { fetchSkill } from "../utils/fetchSkill";
 import { fetchSocial } from "../utils/fetchSocial";
 import { fetchProject } from "../utils/fetchProject";
 
 type Props = {
   pageInfo: PageInfo[];
-  experiances: Experience[];
+  experiences: Experience[];
   skills: Skill[];
   socials: Social[];
   projects: Project[];
@@ -28,7 +26,7 @@ type Props = {
 
 export default function Home({
   pageInfo,
-  experiances,
+  experiences,
   skills,
   socials,
   projects,
@@ -53,7 +51,7 @@ export default function Home({
       </section>
       {/* Experience */}
       <section id="experience" className="snap-center">
-        <WorkExperience experiances={experiances} />
+        <WorkExperience experiences={experiences} />
       </section>
       {/* Skills */}
       <section id="skill" className="snap-start">
@@ -85,15 +83,15 @@ export default function Home({
 }
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo[] = await fetchPageInfo();
-  const experiances: Experience[] = await fetchExperience();
-  const skills: Skill[] = await fetchSkills();
+  const experiences: Experience[] = await fetchExperience();
+  const skills: Skill[] = await fetchSkill();
   const socials: Social[] = await fetchSocial();
   const projects: Project[] = await fetchProject();
 
   return {
     props: {
       pageInfo,
-      experiances,
+      experiences,
       skills,
       socials,
       projects,

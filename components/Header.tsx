@@ -26,7 +26,7 @@ export default function Header({ socials }: Props) {
         }}
         className="flex flex-row item-center"
       >
-        {socials.map((social) => [
+        {socials?.map((social) => [
           <SocialIcon
             key={social._id}
             url={social.url}
@@ -35,26 +35,7 @@ export default function Header({ socials }: Props) {
           />,
         ])}
 
-        {/* <SocialIcon
-          url="https://twitter.com/"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://instagram.com/"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://linkedin.com/"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://facebook.com/"
-          fgColor="gray"
-          bgColor="transparent"
-        /> */}
+      
       </motion.div>
 
       <Link href="#contact" />

@@ -36,7 +36,7 @@ export default function About({ pageInfo }: Props) {
           opacity: 1,
           x: 0,
         }}
-        src={urlFor(page.profilePic).url()}
+        src={urlFor(page?.profilePic).url()}
         className="-mb-20 md:mb-0 rounded-full md:rounded-lg flex-shrink-0 w-56 h-56 object-cover 
         md:h-95 md:w-64 xl:h[600px] xl:w-[500px]"
       />
@@ -46,7 +46,7 @@ export default function About({ pageInfo }: Props) {
           <span className="underline decoration-[#F7AB0A]/50">little</span>{" "}
           Background
         </h4>
-        <p className="text-base">{page.backgroundInformation}</p>
+        <p className="text-base">{page?.backgroundInformation}</p>
       </div>
     </motion.div>
   );

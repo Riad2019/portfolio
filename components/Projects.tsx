@@ -8,7 +8,7 @@ type Props = {
 };
 
 export default function Projects({ projects }: Props) {
-  // const projects = [1, 2, 3, 4, 5];
+ 
   return (
     <motion.div
       initial={{
@@ -36,7 +36,7 @@ export default function Projects({ projects }: Props) {
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
           >
             <motion.img
-              src={urlFor(project.image).url()}
+              src={urlFor(project?.image).url()}
               alt="Picture of the author"
               // className="relative h-102 w-32 max-auto object-cover"
               width={200}
@@ -57,7 +57,7 @@ export default function Projects({ projects }: Props) {
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-4xl font-semibold text-center">
                 <span className=" decoration-[#F7AB0A]/50">
-                  Case Study {idx + 1} of {projects.length}: {project.title}
+                  Case Study {idx + 1} of {projects?.length}: {project.title}
                 </span>
                 System
               </h4>
@@ -74,7 +74,7 @@ export default function Projects({ projects }: Props) {
                 ))}
               </div>
               <p className="text-lg text-center md:text-left">
-                {project.summary}
+                {project?.summary}
               </p>
             </div>
           </div>

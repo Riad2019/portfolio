@@ -5,10 +5,10 @@ import { urlFor } from "../sanity";
 import { Experience } from "../typings";
 
 type Props = {
-  experiances: Experience[];
+  experiences: Experience[];
 };
 
-export default function WorkExperience({ experiances }: Props) {
+export default function WorkExperience({ experiences }: Props) {
   return (
     <motion.div
       initial={{
@@ -29,14 +29,11 @@ export default function WorkExperience({ experiances }: Props) {
         className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar-thin
        scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/40"
       >
-        {experiances?.map((experiances) => (
-          <ExperienceCard key={experiances._id} experiances={experiances} />
+        {experiences?.map((experiences) => (
+          <ExperienceCard key={experiences._id} experiences={experiences} />
         ))}
 
-        {/*         
-        <ExperienceCard />
-        <ExperienceCard />
-        <ExperienceCard /> */}
+
       </div>
     </motion.div>
   );

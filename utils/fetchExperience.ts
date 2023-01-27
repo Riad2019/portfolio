@@ -6,6 +6,6 @@ export const fetchExperience = async () => {
   );
   const data = await res.json();
   const experiences: Experience[] = data.experiences;
-  //   console.log(skills);
+
   return experiences;
 };
