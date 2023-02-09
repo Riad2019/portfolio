@@ -16,6 +16,7 @@ sanity/node_modules
 
 # production
 /build
+/env.local
 
 # misc
 .DS_Store
