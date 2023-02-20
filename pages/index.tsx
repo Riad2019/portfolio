@@ -38,6 +38,10 @@ export default function Home({
     overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/40"
     >
       <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"
+        ></meta>
         <title>Portfolio</title>
       </Head>
 
