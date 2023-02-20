@@ -19,11 +19,12 @@ export default function About({ pageInfo }: Props) {
       transition={{
         duration: 1.5,
       }}
-      className="flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
+      className="flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-center mx-auto items-center "
     >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         About
       </h3>
+
       <motion.img
         initial={{
           x: -200,
@@ -37,9 +38,10 @@ export default function About({ pageInfo }: Props) {
           x: 0,
         }}
         src={urlFor(page?.profilePic).url()}
-        className="-mb-20 md:mb-0 rounded-full md:rounded-lg flex-shrink-0 w-56 h-56 object-cover 
-        md:h-95 md:w-64 xl:h[600px] xl:w-[500px]"
+        className="sm:mb-0 md:mb-0 rounded-full md:rounded-lg flex-shrink-0 w-56 h-56 object-cover 
+        md:h-[350px] md:w-[250px]  xl:h-[450px] xl:w-[400px]"
       />
+
       <div className="space-y-10 px-0 md:px-10">
         <h4 className="text-4xl font-semibold">
           Here is a{" "}

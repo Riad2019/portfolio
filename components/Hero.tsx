@@ -11,13 +11,12 @@ type Props = {
 };
 
 export default function Hero({ pageInfo }: Props) {
-
   const page = pageInfo[0];
 
   const [text] = useTypewriter({
     words: [
       `Hi, The Name's ${page?.name}`,
-      "Guy-who-loves-Coffee.tsx",
+      "Guy-who-loves-Coffee.js",
       "<ButLovesToCodeMore/>",
     ],
     loop: true,
